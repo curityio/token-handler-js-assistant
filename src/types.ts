@@ -17,7 +17,6 @@
  * (such as `scope`, `login_hint` or `ui_locales`). These parameters will be used in the authorization request.
  * Each parameter has to be explicitly allowed in the configuration of the token handler application
  * in the Curity server.
- *
  */
 export interface StartLoginRequest {
   readonly extraAuthorizationParameters?: { [key: string]: string };
@@ -54,6 +53,17 @@ export interface SessionResponse {
   readonly accessTokenExpiresIn?: number;
 }
 
+/**
+ * Passed to {@link OAuthAgentClient#refresh} function.
+ */
+export interface RefreshRequest {
+  /**
+   * Extra parameters to be used in the token refresh request.
+   * Each parameter has to be explicitly allowed in the configuration of the token handler application
+   * in the Curity server.
+   */
+  readonly extraRefreshParameters?: { [key: string]: string };
+}
 
 /**
  * Returned from the {@link OAuthAgentClient#refresh} function. Contains:

@@ -16,6 +16,7 @@ import {
   EndLoginRequest,
   LogoutResponse,
   OAuthAgentRemoteError,
+  RefreshRequest,
   RefreshResponse,
   SessionResponse,
   StartLoginRequest,
@@ -48,13 +49,16 @@ export class OAuthAgentClient {
 
   /**
    * Refreshes the access token. Calls the `/refresh` endpoint.
+   * 
+   * @param request the refresh request possibly containing extra parameters
    *
    * @return the refresh token response possibly containing the new access token's expiration time
-   *
+   * 
    * @throws OAuthAgentRemoteError when OAuth Agent responded with an error
    */
-  async refresh(): Promise<RefreshResponse> {
-    const refreshResponse = await this.fetch("POST", "refresh")
+  async refresh(request?: RefreshRequest): Promise<RefreshResponse> {
+    const urlSearchParams = this.toUrlSearchParams(request?.extraRefreshParameters)
+    const refreshResponse = await this.fetch("POST", "refresh", urlSearchParams)
 
     return {
       accessTokenExpiresIn: refreshResponse.access_token_expires_in
@@ -162,7 +166,7 @@ export class OAuthAgentClient {
 
   }
 
-  private toUrlSearchParams(data: {[key: string]: string; } | undefined): URLSearchParams {
+  private toUrlSearchParams(data: { [key: string]: string; } | undefined): URLSearchParams {
     if (!data) {
       return new URLSearchParams()
     }
@@ -170,12 +174,12 @@ export class OAuthAgentClient {
   }
 
   private async fetch(method: string, path: string, content?: URLSearchParams): Promise<any> {
-    const headers= {
+    const headers = {
       accept: 'application/json',
       'token-handler-version': '1'
     } as Record<string, string>
 
-    if (path == 'login/start' || path == 'login/end') {
+    if (content && content.size !== 0) {
       headers["content-type"] = 'application/x-www-form-urlencoded'
     }
 

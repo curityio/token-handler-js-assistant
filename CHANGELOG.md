@@ -1,5 +1,9 @@
 # Token Handler Assistant Changelog
 
+## [Pending]
+ 
+- Add support for extra parameters in refresh requests
+
 ## [1.1.0] - 2024-08-12
 
 - Send `token-handler-version` header in all requests
