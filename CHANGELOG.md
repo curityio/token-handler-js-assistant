@@ -1,6 +1,6 @@
 # Token Handler Assistant Changelog
 
-## [Pending]
+## [1.2.0] - 2025-05-06
  
 - Add support for extra parameters in refresh requests
 
