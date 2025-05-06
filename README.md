@@ -57,7 +57,11 @@ on every load of the SPA. This function makes a decision based the query string 
    ```
 4. Refreshing tokens
    ```typescript
-   await client.refresh()
+   await client.refresh({
+    extraRefreshParameters: {
+      scope: 'openid'
+    }
+   })
    ```
 5. Retrieving ID token claims
    ```typescript
