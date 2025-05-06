@@ -12,5 +12,5 @@
  *  limitations under the License.
  */
 
-export {StartLoginRequest, StartLoginResponse, EndLoginRequest, SessionResponse, RefreshResponse, LogoutResponse, OAuthAgentRemoteError} from './types'
+export {StartLoginRequest, StartLoginResponse, EndLoginRequest, SessionResponse, RefreshRequest, RefreshResponse, LogoutResponse, OAuthAgentRemoteError} from './types'
 export {Configuration, OAuthAgentClient} from './oauth-agent-client'
