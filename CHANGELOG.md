@@ -1,5 +1,9 @@
 # Token Handler Assistant Changelog
 
+## [1.2.2-rc.1] - 2025-07-22
+
+- Update dependencies to latest versions
+
 ## [1.2.1] - 2025-05-06
  
 - Add support for extra parameters in refresh requests
