@@ -1,6 +1,6 @@
 {
   "name": "@curity/token-handler-js-assistant",
-  "version": "1.2.1",
+  "version": "1.2.2-rc.1",
   "description": "Curity Token Handler JavaScript helper library",
   "main": "lib/token-handler-assistant-lib.js",
   "types": "lib/index.d.ts",
@@ -23,15 +23,15 @@
   "author": "Curity AB",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/jest": "^29.5.12",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
     "jest-fetch-mock": "^3.0.3",
-    "ts-jest": "^29.1.2",
-    "ts-loader": "^9.5.1",
+    "ts-jest": "^29.4.0",
+    "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5",
-    "webpack": "^5.91.0",
-    "webpack-cli": "^5.1.4"
+    "typescript": "^5.8.3",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1"
   }
 }
