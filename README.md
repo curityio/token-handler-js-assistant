@@ -1,4 +1,8 @@
 # token-handler-js-assistant
+
+[![Quality](https://img.shields.io/badge/quality-production-green)](https://curity.io/resources/code-examples/status/)
+[![Availability](https://img.shields.io/badge/availability-binary-blue)](https://curity.io/resources/code-examples/status/)
+
 A helper library to help SPAs interact with the OAuth Agent in the Token Handler pattern.
 
 ## Add to project
